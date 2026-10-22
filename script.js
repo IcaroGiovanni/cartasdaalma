@@ -2443,11 +2443,13 @@ function closeSessionStage() {
 }
 
 const REVEAL_STAGE_MS = 1400;
+let revealToken = 0;
 
 async function revealSessionCard(index) {
   if (sessionShuffling) return;
   sessionShuffling = true;
 
+  const token = (revealToken += 1);
   const card = CARDS[index];
   const deck = DECK_IMAGES[index];
   sessionCardIndex = index;
@@ -2485,7 +2487,7 @@ async function revealSessionCard(index) {
     wait(REVEAL_STAGE_MS),
   ]);
 
-  if (sessionCardIndex !== index) return;
+  if (revealToken !== token) return;
   sessionQuestionText = `${card.name} · ${qi + 1}/${QUESTIONS_PER_DECK}`;
   sessionQuestion.src = questionImage;
   sessionQuestion.alt = `Pergunta do baralho ${card.name}`;
@@ -2496,9 +2498,6 @@ async function revealSessionCard(index) {
 }
 
 async function pickSessionCard(index, button) {
-  if (sessionShuffling) return;
-  sessionShuffling = true;
-
   Array.from(sessionSpread.children).forEach((element) => {
     if (element !== button) element.classList.add("is-dim");
   });
@@ -2509,8 +2508,6 @@ async function pickSessionCard(index, button) {
 }
 
 async function drawOnlineCard() {
-  if (sessionShuffling) return;
-  sessionShuffling = true;
   sessionDraw.disabled = true;
 
   const topCard = sessionStack.lastElementChild;
@@ -3313,6 +3310,7 @@ sessionCreate.addEventListener("click", () => {
   if (!sessionFormat) return;
 
   closeSessionModal();
+  revealToken += 1;
   sessionCardIndex = null;
   sessionQuestionText = "";
   openSessionStage(sessionFormat);
@@ -3326,6 +3324,7 @@ sessionDraw.addEventListener("click", () => {
 
 sessionAgain.addEventListener("click", () => {
   if (!sessionFormat) return;
+  revealToken += 1;
   sessionCardIndex = null;
   sessionQuestionText = "";
   openSessionStage(sessionFormat);
