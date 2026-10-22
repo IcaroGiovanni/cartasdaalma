@@ -1,344 +1,1965 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartas da Alma — Conexão e Reflexão Terapêutica</title>
-  <meta name="description" content="Um novo jeito de conectar terapeutas e clientes através da reflexão. Hub de cartas reflexivas para profissionais de saúde mental.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f6f5f3" />
+    <meta
+      name="description"
+      content="Entre na sua conta e acesse suas cartas e reflexões."
+    />
+    <title>Entrar · Cartas da Alma</title>
+    <link rel="icon" href="logo-icon.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true"><span class="bg__grid"></span></div>
 
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announcement-bar" id="announcementBar">
-    <div class="announcement-inner">
-      <span class="announcement-text">✨ Conheça uma nova forma de criar conexão dentro do processo terapêutico</span>
-      <a href="#cta" class="announcement-cta">Conheça o Cartas da Alma →</a>
+    <div class="layout" id="view-login">
+      <section class="brand rise" style="--delay: 60ms">
+        <img class="logo logo--brand" src="logo-accent.png" alt="Cartas da Alma" />
+
+        <h2 class="brand__title">
+          Liberte o poder do seu cliente <span>em ser autêntico</span>
+        </h2>
+        <p class="brand__text">
+          Acesse suas cartas, reflexões e rituais de cuidado em um só lugar.
+        </p>
+
+        <figure class="brand__quote">
+          <blockquote>“Cada carta foi um encontro honesto comigo mesma.”</blockquote>
+          <figcaption>— Marina, leitora</figcaption>
+        </figure>
+      </section>
+
+      <main class="panel">
+        <header class="panel__brand rise" style="--delay: 0ms">
+          <img class="logo logo--panel" src="logo-accent.png" alt="Cartas da Alma" />
+        </header>
+
+        <div class="card rise" style="--delay: 120ms">
+          <h1 class="card__title" id="login-title" tabindex="-1">
+            Bem-vindo de volta
+          </h1>
+          <p class="card__subtitle">Entre para acompanhar seus pacientes e cartas.</p>
+
+          <form class="form" id="login-form" novalidate>
+            <fieldset class="role">
+              <legend class="role__legend">Entrar como</legend>
+              <div class="role__options">
+                <input
+                  class="role__input"
+                  type="radio"
+                  id="role-admin"
+                  name="role"
+                  value="admin"
+                />
+                <label class="role__option" for="role-admin">Administrador</label>
+
+                <input
+                  class="role__input"
+                  type="radio"
+                  id="role-therapist"
+                  name="role"
+                  value="therapist"
+                  checked
+                />
+                <label class="role__option" for="role-therapist">Terapeuta</label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="voce@email.com"
+                aria-describedby="email-error"
+              />
+              <p class="field__error" id="email-error" hidden></p>
+            </div>
+
+            <div class="field">
+              <div class="field__head">
+                <label for="password">Senha</label>
+                <a class="link" href="#">Esqueceu a senha?</a>
+              </div>
+              <div class="input">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="current-password"
+                  placeholder="••••••••"
+                  aria-describedby="password-error"
+                />
+                <button
+                  class="input__toggle"
+                  id="toggle-password"
+                  type="button"
+                  aria-label="Mostrar senha"
+                  aria-pressed="false"
+                >
+                  <svg
+                    class="icon icon--eye"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"
+                    />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  <svg
+                    class="icon icon--eye-off"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.8 10.8 0 0 1-1.444 2.49"
+                    />
+                    <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
+                    <path
+                      d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"
+                    />
+                    <path d="m2 2 20 20" />
+                  </svg>
+                </button>
+              </div>
+              <p class="field__error" id="password-error" hidden></p>
+            </div>
+
+            <label class="checkbox">
+              <input type="checkbox" name="remember" />
+              <span>Manter conectado</span>
+            </label>
+
+            <button class="btn btn--primary" id="submit-btn" type="submit">
+              <span class="btn__label">Entrar</span>
+              <svg
+                class="btn__arrow"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+
+            <div class="feedback" id="feedback" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <button class="reset-demo" id="reset-demo" type="button">
+          Reiniciar demonstração
+        </button>
+      </main>
     </div>
-  </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo"><img src="logo.PNG" alt="Cartas da Alma" class="logo-img"></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#como-funciona">Como funciona</a></li>
-        <li><a href="#terapeutas">Para terapeutas</a></li>
-        <li><a href="#beneficios">Benefícios</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-      <a href="#cta" class="nav-btn">Quero conhecer</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
-        <span></span><span></span><span></span>
+    <div class="layout" id="view-school" hidden>
+      <main class="panel">
+        <header class="panel__brand">
+          <img class="logo logo--panel" src="logo-accent.png" alt="Cartas da Alma" />
+        </header>
+
+        <div class="card rise">
+          <span class="lock-badge">
+            <svg
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </span>
+
+          <h1 class="card__title" id="school-title" tabindex="-1">
+            Desbloqueie sua Escola
+          </h1>
+          <p class="card__text">
+            Essa experiência foi criada para agregar valor ao cliente do
+            terapeuta e reforçar a confiança na sua prática. É de suma
+            importância que o terapeuta a conclua antes de entrar no painel.
+          </p>
+
+          <ul class="perks">
+            <li class="perk">
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              Agrega valor à experiência do seu cliente
+            </li>
+            <li class="perk">
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="m9 12 2 2 4-4" />
+              </svg>
+              Essencial para a sua jornada na Cartas da Alma
+            </li>
+          </ul>
+
+          <p class="start-box">
+            Para começar essa experiência, digite:
+            <span class="start-box__code">ALMA</span>
+          </p>
+
+          <form class="form" id="school-form" novalidate>
+            <div class="field">
+              <label for="school-code">Código de desbloqueio</label>
+              <input
+                id="school-code"
+                name="school-code"
+                type="text"
+                inputmode="text"
+                autocomplete="off"
+                placeholder="Digite o código"
+                aria-describedby="school-code-error"
+              />
+              <p class="field__error" id="school-code-error" hidden></p>
+            </div>
+
+            <button class="btn btn--primary" id="unlock-btn" type="submit">
+              <span class="btn__label">Desbloquear escola</span>
+              <svg
+                class="btn__arrow"
+                viewBox="0 0 24 24"
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 9.9-1" />
+              </svg>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+
+            <div class="feedback" id="school-feedback" aria-live="polite"></div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <div class="layout layout--top" id="view-content" hidden>
+      <main class="panel panel--content">
+        <header class="school-head rise">
+          <img class="logo logo--head" src="logo-accent.png" alt="Cartas da Alma" />
+          <div class="school-head__text">
+            <span>Escola · Formação do terapeuta</span>
+          </div>
+          <div class="progress">
+            <span class="progress__label" id="progress-label">Etapa 1 de 4</span>
+            <div class="progress__track">
+              <span class="progress__fill" id="progress-fill"></span>
+            </div>
+          </div>
+        </header>
+
+        <div class="card rise" style="--delay: 80ms">
+          <p class="eyebrow">Formação obrigatória</p>
+          <h1 class="card__title" id="content-title" tabindex="-1">
+            Escola Cartas da Alma
+          </h1>
+          <p class="card__text">
+            Leia cada etapa e desbloqueie a seguinte. Ao concluir as quatro, você
+            segue para o painel.
+          </p>
+
+          <ol class="modules" id="modules">
+            <li class="module" data-index="0">
+              <button
+                class="module__head"
+                type="button"
+                aria-expanded="true"
+                aria-controls="module-body-0"
+              >
+                <span class="module__status" aria-hidden="true">
+                  <span class="status__num">1</span>
+                  <svg
+                    class="status__lock"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  <svg
+                    class="status__check"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </span>
+                <span class="module__title">O que são as Cartas da Alma</span>
+                <svg
+                  class="module__chevron"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+
+              <div class="module__body" id="module-body-0">
+                <p class="module__lead">
+                  Um instrumento para ampliar a escuta e favorecer o
+                  autoconhecimento.
+                </p>
+                <p>
+                  As Cartas da Alma não foram criadas para dizer ao paciente quem
+                  ele é. Foram criadas para ajudá-lo a descobrir o porquê de ele
+                  ser quem é.
+                </p>
+                <p>
+                  Por meio de perguntas, o paciente é convidado a olhar para suas
+                  experiências, memórias, relações, crenças, desejos e sentimentos
+                  — muitas vezes por caminhos que não seriam acessados
+                  espontaneamente em uma conversa convencional.
+                </p>
+
+                <button class="btn btn--primary module__cta" type="button">
+                  <span class="btn__label">Concluir etapa e desbloquear a próxima</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <li class="module" data-index="1">
+              <button
+                class="module__head"
+                type="button"
+                aria-expanded="false"
+                aria-controls="module-body-1"
+              >
+                <span class="module__status" aria-hidden="true">
+                  <span class="status__num">2</span>
+                  <svg
+                    class="status__lock"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  <svg
+                    class="status__check"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </span>
+                <span class="module__title">A essência das Cartas da Alma</span>
+                <svg
+                  class="module__chevron"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+
+              <div class="module__body" id="module-body-1" hidden>
+                <p>
+                  As Cartas da Alma são uma ferramenta terapêutica de
+                  investigação e autoconhecimento, composta por 9 baralhos
+                  temáticos e 30 perguntas para cada um.
+                </p>
+                <p>
+                  Cada baralho possui um tema profundo, mas recebe um nome
+                  simbólico e não óbvio. E isso é intencional: o paciente não
+                  sabe o que existe dentro de cada baralho antes de escolhê-lo.
+                </p>
+                <p>
+                  Ele simplesmente observa e escolhe aquele com o qual, naquele
+                  momento, sente maior identificação. Depois, escolhe uma carta.
+                  E então começa o processo de elaboração.
+                </p>
+                <p>O princípio é simples:</p>
+                <div class="flow" role="list" aria-label="Processo de elaboração">
+                  <span class="flow__step" role="listitem">Escolha</span>
+                  <span class="flow__step" role="listitem">Pergunta</span>
+                  <span class="flow__step" role="listitem">Associação</span>
+                  <span class="flow__step" role="listitem">Elaboração</span>
+                  <span class="flow__step" role="listitem">Tomada de consciência</span>
+                </div>
+                <p class="module__note">
+                  A força da ferramenta está justamente em não antecipar, ao
+                  paciente, aquilo que será abordado.
+                </p>
+
+                <button class="btn btn--primary module__cta" type="button">
+                  <span class="btn__label">Concluir etapa e desbloquear a próxima</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <li class="module" data-index="2">
+              <button
+                class="module__head"
+                type="button"
+                aria-expanded="false"
+                aria-controls="module-body-2"
+              >
+                <span class="module__status" aria-hidden="true">
+                  <span class="status__num">3</span>
+                  <svg
+                    class="status__lock"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  <svg
+                    class="status__check"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </span>
+                <span class="module__title">
+                  Por que o paciente não deve saber o significado dos baralhos?
+                </span>
+                <svg
+                  class="module__chevron"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+
+              <div class="module__body" id="module-body-2" hidden>
+                <p>A escolha precisa permanecer espontânea.</p>
+                <p>
+                  Imagine um paciente que esteja vivendo um conflito em relação a
+                  algum dos temas: isso poderia causar, de imediato, uma
+                  resistência.
+                </p>
+                <p>
+                  A ideia aqui é trazer segurança à escolha, justamente para que
+                  a pergunta não se torne impositiva.
+                </p>
+
+                <button class="btn btn--primary module__cta" type="button">
+                  <span class="btn__label">Concluir etapa e desbloquear a próxima</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </li>
+
+            <li class="module" data-index="3">
+              <button
+                class="module__head"
+                type="button"
+                aria-expanded="false"
+                aria-controls="module-body-3"
+              >
+                <span class="module__status" aria-hidden="true">
+                  <span class="status__num">4</span>
+                  <svg
+                    class="status__lock"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  <svg
+                    class="status__check"
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                </span>
+                <span class="module__title">O papel do terapeuta</span>
+                <svg
+                  class="module__chevron"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+
+              <div class="module__body" id="module-body-3" hidden>
+                <p>
+                  O terapeuta não interpreta a carta pelo paciente. A carta não
+                  precisa ser explicada e a pergunta não precisa receber uma
+                  resposta “correta”.
+                </p>
+                <p>
+                  O papel do terapeuta é escutar e perceber o que a pergunta
+                  movimentou naquela pessoa. Algumas perguntas encontram uma
+                  memória, uma ferida, um desejo, uma crença ou uma contradição.
+                </p>
+                <p>
+                  Então, não tenha pressa em interpretar a pergunta. Use, se for
+                  necessário, os questionamentos abaixo:
+                </p>
+                <ul class="questions">
+                  <li class="question">O que essa pergunta desperta em você?</li>
+                  <li class="question">O que veio à sua mente primeiro?</li>
+                  <li class="question">
+                    Existe alguma lembrança associada a isso?
+                  </li>
+                  <li class="question">
+                    O que você sente quando fala sobre isso?
+                  </li>
+                  <li class="question">
+                    Isso acontece ou aconteceu em outras áreas da sua vida?
+                  </li>
+                  <li class="question">
+                    O que essa resposta te faz perceber sobre você?
+                  </li>
+                </ul>
+                <p class="module__note">
+                  A ideia é que a pergunta da carta seja apenas a porta de
+                  entrada: a sessão acontece na elaboração.
+                </p>
+
+                <button class="btn btn--primary module__cta" type="button">
+                  <span class="btn__label">
+                    Concluir formação e ir para o painel
+                  </span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </li>
+          </ol>
+
+          <div class="feedback" id="content-feedback" aria-live="polite"></div>
+        </div>
+      </main>
+    </div>
+
+    <div class="layout" id="view-congrats" hidden>
+      <main class="panel">
+        <header class="panel__brand">
+          <img class="logo logo--panel" src="logo-accent.png" alt="Cartas da Alma" />
+        </header>
+
+        <div class="card card--center rise">
+          <div class="seal-wrap">
+            <span class="seal-glow" aria-hidden="true"></span>
+            <svg
+              class="seal"
+              viewBox="0 0 120 120"
+              width="132"
+              height="132"
+              role="img"
+              aria-label="Selo de qualificado"
+            >
+              <path
+                class="seal__ribbon"
+                d="M42 84 L30 118 L54 108 L60 118 L66 108 L90 118 L78 84 Z"
+              />
+              <circle cx="60" cy="54" r="47" class="seal__dots" />
+              <circle cx="60" cy="54" r="41" class="seal__disc" />
+              <circle cx="60" cy="54" r="36" class="seal__ring" />
+              <circle cx="60" cy="42" r="13" class="seal__check-disc" />
+              <path class="seal__check" d="m54.5 42 4 4 7-7.5" />
+              <text x="60" y="67" class="seal__label">QUALIFICADO</text>
+              <text x="60" y="79" class="seal__brand">CARTAS DA ALMA</text>
+            </svg>
+          </div>
+
+          <p class="eyebrow">Formação concluída</p>
+          <h1 class="card__title" id="congrats-title" tabindex="-1">
+            Parabéns!
+          </h1>
+          <p class="card__text">
+            Você concluiu as quatro etapas da Escola Cartas da Alma e recebeu o
+            selo de qualificado. Agora pode seguir para o painel.
+          </p>
+          <p class="seal-date" id="seal-date">Selo emitido em —</p>
+
+          <button class="btn btn--primary" id="congrats-continue" type="button">
+            <span class="btn__label">Ir para o painel</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <div
+      class="cinematic"
+      id="cinematic"
+      hidden
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Apresentação das cartas"
+    >
+      <p class="cinematic__line" id="cinematic-line"></p>
+      <div class="cinematic__card" id="cinematic-card">
+        <img id="cinematic-img" src="carta1.jpeg" alt="" />
+      </div>
+      <p class="cinematic__name" id="cinematic-name"></p>
+      <div class="cinematic__explain" id="cinematic-explain" hidden>
+        <img class="cinematic__explain-img" id="cinematic-explain-img" src="carta1.jpeg" alt="" />
+        <div class="cinematic__explain-body">
+          <p class="cinematic__explain-eyebrow" id="cinematic-explain-eyebrow"></p>
+          <h2 class="cinematic__explain-name" id="cinematic-explain-name"></h2>
+          <div class="chips cinematic__explain-chips" id="cinematic-explain-chips"></div>
+          <div class="cinematic__explain-text" id="cinematic-explain-text"></div>
+          <button class="btn btn--primary btn--auto" id="cinematic-explain-next" type="button">
+            <span class="btn__label" id="cinematic-explain-next-label">Próxima carta</span>
+          </button>
+        </div>
+      </div>
+      <button class="cinematic__skip" id="cinematic-skip" type="button">
+        Pular
       </button>
     </div>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="cloud-bg cloud-bg-hero"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-container">
-      <div class="hero-content reveal">
-        <h1 class="hero-title">Transforme cada carta<br>em um momento de <em>conexão</em>.</h1>
-        <p class="hero-text">Cartas da Alma é o hub de cartas reflexivas criado para terapeutas que desejam levar novas experiências de reflexão e autoconhecimento para seus clientes.</p>
-        <div class="hero-ctas">
-          <a href="#cta" class="btn btn-primary">Quero conhecer o Cartas da Alma</a>
-          <a href="#vsl" class="btn btn-ghost">Ver como funciona ↓</a>
+    <div class="app" id="view-dashboard" hidden>
+      <aside class="sidebar">
+        <div class="sidebar__brand">
+          <img
+            class="logo logo--sidebar"
+            src="logo-accent.png"
+            alt="Cartas da Alma"
+          />
         </div>
-        <p class="hero-sub">Uma ferramenta criada para complementar a experiência terapêutica.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- VSL -->
-  <section class="vsl" id="vsl">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Existe uma nova forma de criar<br>momentos de reflexão.</h2>
-        <p class="section-subtitle">Entenda em poucos minutos como o Cartas da Alma funciona e como ele pode fazer parte da sua prática terapêutica.</p>
-      </div>
-      <div class="vsl-video reveal">
-        <div class="video-placeholder">
-          <div class="video-play-btn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-          </div>
-          <span class="video-label">Assista à apresentação</span>
-        </div>
-      </div>
-    </div>
-  </section>
+        <nav class="nav" aria-label="Seções do painel">
+          <p class="nav__label">Menu</p>
 
-  <!-- PROBLEMA / CONTEXTO -->
-  <section class="problema" id="problema">
-    <div class="cloud-bg cloud-bg-problema"></div>
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Às vezes, uma pergunta é suficiente<br>para abrir uma nova perspectiva.</h2>
-        <p class="section-subtitle">Durante o processo terapêutico, algumas reflexões continuam ecoando mesmo depois da sessão. O Cartas da Alma foi criado para transformar essas reflexões em experiências que podem continuar acompanhando o cliente.</p>
-      </div>
-      <div class="cards-grid reveal">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/><path d="M16 10v8M12 14h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Reflexão</h3>
-          <p>Perguntas que estimulam novos olhares sobre pensamentos, sentimentos e experiências.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="12" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8 26c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Autoconhecimento</h3>
-          <p>Um espaço para o cliente parar, observar e elaborar suas próprias respostas.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="12" cy="16" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="16" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M17 14a6 6 0 0 0 0 4" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Conexão</h3>
-          <p>Uma ferramenta que aproxima terapeuta e cliente para além do momento da sessão.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMO FUNCIONA -->
-  <section class="como-funciona" id="como-funciona">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Simples para o terapeuta.<br>Significativo para o cliente.</h2>
-      </div>
-      <div class="timeline reveal">
-        <div class="timeline-step">
-          <div class="timeline-number">01</div>
-          <div class="timeline-content">
-            <h3>Escolha</h3>
-            <p>O terapeuta acessa sua biblioteca de cartas e escolhe a reflexão ideal para aquele momento.</p>
-          </div>
-        </div>
-        <div class="timeline-connector"></div>
-        <div class="timeline-step">
-          <div class="timeline-number">02</div>
-          <div class="timeline-content">
-            <h3>Envie</h3>
-            <p>A carta é compartilhada com o cliente de forma simples e intuitiva.</p>
-          </div>
-        </div>
-        <div class="timeline-connector"></div>
-        <div class="timeline-step">
-          <div class="timeline-number">03</div>
-          <div class="timeline-content">
-            <h3>Reflita</h3>
-            <p>O cliente acessa a carta, lê e responde à reflexão proposta.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFÍCIOS -->
-  <section class="beneficios" id="beneficios">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Mais do que cartas.<br>Uma nova ferramenta para sua prática.</h2>
-      </div>
-      <div class="benefits-grid reveal">
-        <div class="benefit-card">
-          <span class="benefit-check">✓</span>
-          <span>Biblioteca de cartas prontas</span>
-        </div>
-        <div class="benefit-card">
-          <span class="benefit-check">✓</span>
-          <span>Envio simples para seus clientes</span>
-        </div>
-        <div class="benefit-card">
-          <span class="benefit-check">✓</span>
-          <span>Experiência digital intuitiva</span>
-        </div>
-        <div class="benefit-card">
-          <span class="benefit-check">✓</span>
-          <span>Mais possibilidades de reflexão entre sessões</span>
-        </div>
-        <div class="benefit-card">
-          <span class="benefit-check">✓</span>
-          <span>Organização dos conteúdos</span>
-        </div>
-        <div class="benefit-card">
-          <span class="benefit-check">✓</span>
-          <span>Experiência moderna para seus clientes</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PARA QUEM É -->
-  <section class="para-quem">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Feito para profissionais que acreditam<br>na profundidade da escuta.</h2>
-      </div>
-      <div class="audience-grid reveal">
-        <div class="audience-card">
-          <div class="audience-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4C9.582 4 6 7.582 6 12v2c0 2 1 3.5 2.5 4.5L14 24l5.5-5.5C21 17.5 22 16 22 14v-2c0-4.418-3.582-8-8-8z" stroke="currentColor" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Psicólogos</h3>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="6" y="6" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M10 14h8M14 10v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Psicanalistas</h3>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M14 10v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Terapeutas</h3>
-        </div>
-        <div class="audience-card">
-          <div class="audience-icon">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M8 14c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M5 20c0-2 1.5-3 3-3h12c1.5 0 3 1 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Prof. de Desenvolvimento Pessoal</h3>
-        </div>
-      </div>
-      <p class="para-quem-text reveal">O Cartas da Alma foi pensado para profissionais que desejam incorporar novas formas de reflexão à experiência de seus clientes.</p>
-    </div>
-  </section>
-
-  <!-- DIFERENCIAL -->
-  <section class="diferencial">
-    <div class="cloud-bg cloud-bg-diferencial"></div>
-    <div class="diferencial-overlay"></div>
-    <div class="container">
-      <div class="diferencial-content reveal">
-        <h2 class="diferencial-title">Porque algumas conversas começam<br>com uma pergunta.</h2>
-        <p class="diferencial-text">O Cartas da Alma não busca substituir o trabalho do terapeuta, mas oferecer uma ferramenta complementar para estimular reflexão e conexão.</p>
-        <div class="diferencial-highlight">
-          <span>Você conduz.</span>
-          <span>A carta provoca.</span>
-          <span>O cliente reflete.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA PRINCIPAL -->
-  <section class="cta-section" id="cta">
-    <div class="cloud-bg cloud-bg-cta"></div>
-    <div class="cta-overlay"></div>
-    <div class="container">
-      <div class="cta-content reveal">
-        <h2 class="cta-title">Leve novas possibilidades de<br>reflexão para seus clientes.</h2>
-        <p class="cta-text">Conheça o Cartas da Alma e descubra uma nova maneira de integrar tecnologia, reflexão e conexão à sua prática.</p>
-        <a href="#" class="btn btn-primary btn-large">Quero conhecer o Cartas da Alma →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <div class="section-header reveal">
-        <h2 class="section-title">Dúvidas sobre o Cartas da Alma?</h2>
-      </div>
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>O que é o Cartas da Alma?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <button
+            class="nav__item nav__item--admin"
+            type="button"
+            data-section="admin"
+            hidden
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="17"
+              height="17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <span>Administrador</span>
           </button>
-          <div class="faq-answer">
-            <p>Cartas da Alma é uma plataforma SaaS criada para terapeutas. Oferece um hub de cartas reflexivas prontas, que podem ser enviadas aos clientes durante o acompanhamento terapêutico, criando momentos de reflexão, autoconhecimento e conexão.</p>
+
+          <button
+            class="nav__item is-active"
+            type="button"
+            data-section="sessao"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="17"
+              height="17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect width="18" height="18" x="3" y="4" rx="2" />
+              <path d="M16 2v4" />
+              <path d="M8 2v4" />
+              <path d="M3 10h18" />
+            </svg>
+            <span>Sessão</span>
+          </button>
+
+          <button class="nav__item" type="button" data-section="chat">
+            <svg
+              viewBox="0 0 24 24"
+              width="17"
+              height="17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+            </svg>
+            <span>Chat</span>
+          </button>
+
+          <button class="nav__item" type="button" data-section="escola">
+            <svg
+              viewBox="0 0 24 24"
+              width="17"
+              height="17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            </svg>
+            <span>Escola</span>
+          </button>
+
+          <button
+            class="nav__item nav__item--sub"
+            type="button"
+            data-section="cartas"
+          >
+            <span class="nav__dot" aria-hidden="true"></span>
+            <span>Cartas</span>
+          </button>
+
+          <button class="nav__item" type="button" data-section="certificado">
+            <svg
+              viewBox="0 0 24 24"
+              width="17"
+              height="17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="8" r="6" />
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+            </svg>
+            <span>Certificado</span>
+          </button>
+
+          <button class="nav__item" type="button" data-section="config">
+            <svg
+              viewBox="0 0 24 24"
+              width="17"
+              height="17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 4h-7" />
+              <path d="M10 4H3" />
+              <path d="M21 12h-9" />
+              <path d="M8 12H3" />
+              <path d="M21 20h-5" />
+              <path d="M12 20H3" />
+              <path d="M14 2v4" />
+              <path d="M8 10v4" />
+              <path d="M16 18v4" />
+            </svg>
+            <span>Configurações</span>
+          </button>
+
+          <button class="nav__item" type="button" data-section="termos">
+            <svg
+              viewBox="0 0 24 24"
+              width="17"
+              height="17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <path d="M14 2v6h6" />
+              <path d="M16 13H8" />
+              <path d="M16 17H8" />
+              <path d="M10 9H8" />
+            </svg>
+            <span>Termos</span>
+          </button>
+        </nav>
+
+        <div class="sidebar__footer">
+          <div class="profile">
+            <span class="profile__avatar" id="profile-avatar">T</span>
+            <span class="profile__text">
+              <strong id="profile-name">Terapeuta</strong>
+              <span id="profile-role">Terapeuta</span>
+            </span>
+          </div>
+          <button
+            class="btn btn--ghost btn--sm btn--block"
+            id="logout-btn"
+            type="button"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="15"
+              height="15"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <path d="m16 17 5-5-5-5" />
+              <path d="M21 12H9" />
+            </svg>
+            Sair
+          </button>
+        </div>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="section-kicker">Painel do terapeuta</p>
+            <h1 class="topbar__title" id="section-title">Sessão</h1>
+            <p class="topbar__sub" id="section-subtitle">
+              Acompanhe sua agenda e retome de onde parou.
+            </p>
+          </div>
+          <div class="topbar__right">
+            <span class="topbar__date" id="topbar-date"></span>
+            <span class="pill" id="topbar-pill">Terapeuta</span>
+          </div>
+        </header>
+
+        <section class="app__section" data-section="admin" hidden>
+          <div class="card card--hero">
+            <p class="eyebrow">Painel do administrador</p>
+            <h2 class="card__title" id="admin-title" tabindex="-1">Olá!</h2>
+            <p class="card__subtitle" id="admin-subtitle">
+              Gerencie a equipe e o suporte da plataforma.
+            </p>
+
+            <div class="hero__actions">
+              <button
+                class="btn btn--primary btn--auto"
+                type="button"
+                id="admin-add-therapist"
+              >
+                Adicionar terapeuta
+              </button>
+              <button
+                class="btn btn--outline btn--auto"
+                type="button"
+                data-goto="chat"
+              >
+                Abrir suporte com terapeutas
+              </button>
+            </div>
+          </div>
+
+          <div class="card">
+            <p class="eyebrow">Visão geral</p>
+            <h3 class="card__heading">Pessoas no sistema</h3>
+            <p class="card__text" id="admin-summary-text">—</p>
+
+            <ul class="tiles">
+              <li class="tile">
+                <span class="tile__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                  </svg>
+                </span>
+                <span class="tile__label">Terapeutas</span>
+                <span class="tile__value" id="stat-therapists">0</span>
+              </li>
+              <li class="tile">
+                <span class="tile__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" />
+                  </svg>
+                </span>
+                <span class="tile__label">Administradores</span>
+                <span class="tile__value" id="stat-admins">0</span>
+              </li>
+              <li class="tile">
+                <span class="tile__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                  </svg>
+                </span>
+                <span class="tile__label">Conversas de suporte</span>
+                <span class="tile__value" id="stat-support-chats">0</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="admin-grid">
+            <form class="card form" id="add-therapist-form" novalidate>
+              <p class="eyebrow">Adicionar</p>
+              <h3 class="card__heading">Novo terapeuta</h3>
+              <p class="card__text">
+                Cadastre um terapeuta para liberar o acesso dele à plataforma.
+              </p>
+
+              <div class="field">
+                <label for="add-therapist-name">Nome completo</label>
+                <input
+                  id="add-therapist-name"
+                  name="name"
+                  type="text"
+                  autocomplete="off"
+                />
+                <p class="field__error" id="add-therapist-name-error" hidden></p>
+              </div>
+
+              <div class="field">
+                <label for="add-therapist-email">E-mail</label>
+                <input
+                  id="add-therapist-email"
+                  name="email"
+                  type="email"
+                  autocomplete="off"
+                />
+                <p
+                  class="field__error"
+                  id="add-therapist-email-error"
+                  hidden
+                ></p>
+              </div>
+
+              <button class="btn btn--primary" type="submit">
+                <span class="btn__label">Adicionar terapeuta</span>
+              </button>
+
+              <div
+                class="feedback"
+                id="add-therapist-feedback"
+                aria-live="polite"
+              ></div>
+            </form>
+
+            <form class="card form" id="add-admin-form" novalidate>
+              <p class="eyebrow">Adicionar</p>
+              <h3 class="card__heading">Novo administrador</h3>
+              <p class="card__text">
+                Administradores também enxergam esta área de gestão.
+              </p>
+
+              <div class="field">
+                <label for="add-admin-name">Nome completo</label>
+                <input
+                  id="add-admin-name"
+                  name="name"
+                  type="text"
+                  autocomplete="off"
+                />
+                <p class="field__error" id="add-admin-name-error" hidden></p>
+              </div>
+
+              <div class="field">
+                <label for="add-admin-email">E-mail</label>
+                <input
+                  id="add-admin-email"
+                  name="email"
+                  type="email"
+                  autocomplete="off"
+                />
+                <p class="field__error" id="add-admin-email-error" hidden></p>
+              </div>
+
+              <button class="btn btn--primary" type="submit">
+                <span class="btn__label">Adicionar administrador</span>
+              </button>
+
+              <div class="feedback" id="add-admin-feedback" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <div class="card">
+            <p class="eyebrow">Equipe</p>
+            <h3 class="card__heading">Lista de pessoas</h3>
+            <p class="card__text">
+              Terapeutas e administradores cadastrados nesta plataforma.
+            </p>
+
+            <ul class="user-list" id="user-list"></ul>
+
+            <p class="user-list__empty" id="user-list-empty" hidden>
+              Nenhuma pessoa cadastrada ainda. Adicione um terapeuta ou
+              administrador nos formulários acima.
+            </p>
+          </div>
+        </section>
+
+        <section class="app__section" data-section="sessao">
+          <div class="card card--hero">
+            <p class="eyebrow">Bem-vindo</p>
+            <h2 class="card__title" id="dashboard-title" tabindex="-1">Olá!</h2>
+            <p class="card__subtitle" id="dashboard-subtitle"></p>
+
+            <ul class="tiles">
+              <li class="tile">
+                <span class="tile__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </span>
+                <span class="tile__label">Acesso</span>
+                <span class="tile__value" id="tile-role">—</span>
+              </li>
+              <li class="tile">
+                <span class="tile__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+                    <path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5" />
+                  </svg>
+                </span>
+                <span class="tile__label">Escola</span>
+                <span class="tile__value" id="tile-school">—</span>
+              </li>
+              <li class="tile">
+                <span class="tile__icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="9" r="6" />
+                    <path d="m8.2 14.3-1.4 7.2 5.2-2.6 5.2 2.6-1.4-7.2" />
+                  </svg>
+                </span>
+                <span class="tile__label">Selo</span>
+                <span class="tile__value" id="tile-seal">—</span>
+              </li>
+            </ul>
+
+            <div class="hero__actions">
+              <button
+                class="btn btn--primary btn--auto"
+                type="button"
+                id="new-session"
+              >
+                Nova sessão
+              </button>
+              <button
+                class="btn btn--outline btn--auto"
+                type="button"
+                data-goto="chat"
+              >
+                Abrir chat com a criadora
+              </button>
+            </div>
+          </div>
+
+          <div class="card" id="session-status" hidden>
+            <p class="eyebrow">Sessão atual</p>
+            <h3 class="card__heading" id="session-status-title">
+              Sessão em andamento
+            </h3>
+            <div class="chips">
+              <span class="chip" id="session-status-format">—</span>
+            </div>
+            <p class="card__text" id="session-status-question">
+              Escolha ou sorteie uma carta para ver a pergunta da sessão.
+            </p>
+            <button
+              class="btn btn--outline btn--auto"
+              id="session-reopen"
+              type="button"
+            >
+              Retomar sessão
+            </button>
+          </div>
+        </section>
+
+        <section class="app__section" data-section="cartas" hidden>
+          <button class="back-link" type="button" data-goto="escola">
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+            <span>Voltar para a Escola</span>
+          </button>
+
+          <div class="card">
+            <p class="eyebrow">Cartas</p>
+            <h3 class="card__heading">As 9 cartas</h3>
+            <p class="card__text">
+              Toque em uma carta para ver o significado que orienta a leitura no
+              atendimento.
+            </p>
+
+            <div class="carta-grid" id="carta-grid"></div>
+
+            <button class="btn btn--ghost" id="replay-cinematic" type="button">
+              <span class="btn__label">Rever apresentação das cartas</span>
+            </button>
+          </div>
+
+          <div class="card">
+            <p class="eyebrow">Baralhos</p>
+            <h3 class="card__heading">9 baralhos temáticos</h3>
+            <p class="card__text">
+              Cada baralho reúne 30 perguntas com nomes simbólicos. O paciente
+              escolhe sem saber o que existe dentro.
+            </p>
+          </div>
+        </section>
+
+        <section class="app__section" data-section="chat" hidden>
+          <div class="chat">
+            <div class="chat__list" id="chat-list" role="tablist" aria-label="Conversas">
+            </div>
+
+            <div class="chat__thread">
+              <header class="chat__head">
+                <span class="profile__avatar" aria-hidden="true">C</span>
+                <span class="chat__head-text">
+                  <strong id="chat-name">Selecione a conversa</strong>
+                  <span class="chat__status">
+                    <span class="chat__status-dot" aria-hidden="true"></span>
+                    Online agora
+                  </span>
+                </span>
+              </header>
+              <div class="chat__body" id="chat-body">
+                <p class="chat__empty">
+                  Converse com a criadora do app para tirar dúvidas sobre o
+                  Cartas da Alma.
+                </p>
+              </div>
+              <form class="chat__form" id="chat-form">
+                <div class="chat__field">
+                  <textarea
+                    id="chat-input"
+                    rows="1"
+                    autocomplete="off"
+                    placeholder="Escreva uma mensagem…"
+                    aria-label="Mensagem"
+                  ></textarea>
+                  <span class="chat__hint">Enter envia · Shift + Enter quebra linha</span>
+                </div>
+                <button
+                  class="chat__send"
+                  id="chat-send"
+                  type="submit"
+                  aria-label="Enviar mensagem"
+                  disabled
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.9"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M14.5 9.5 3 12l18 8-3.5-17.5L12 12" />
+                    <path d="M12 12 3.5 4.5" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="app__section" data-section="escola" hidden>
+          <div class="card">
+            <p class="eyebrow">Formação</p>
+            <h3 class="card__heading">Escola Cartas da Alma</h3>
+            <p class="card__text" id="school-status-text">—</p>
+
+            <div class="progress progress--block">
+              <span class="progress__label" id="school-progress-label">
+                Etapa 1 de 4
+              </span>
+              <div class="progress__track">
+                <span class="progress__fill" id="school-progress-fill"></span>
+              </div>
+            </div>
+
+            <div class="chips">
+              <span class="chip" id="school-seal-chip">Selo não emitido</span>
+              <span class="chip" id="school-modules-chip">4 etapas</span>
+            </div>
+
+            <ul class="steps" id="school-steps"></ul>
+
+            <button
+              class="btn btn--primary"
+              id="review-school"
+              type="button"
+            >
+              <span class="btn__label">Rever formação</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="app__section" data-section="config" hidden>
+          <div class="settings-grid">
+            <form class="card form" id="settings-form" novalidate>
+              <p class="eyebrow">Perfil</p>
+              <div class="field">
+                <label for="setting-name">Nome</label>
+                <input id="setting-name" name="name" type="text" autocomplete="name" />
+                <p class="field__error" id="setting-name-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="setting-email">E-mail</label>
+                <input
+                  id="setting-email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                />
+                <p class="field__error" id="setting-email-error" hidden></p>
+              </div>
+
+              <div class="field">
+                <label for="setting-specialty">Especialidade</label>
+                <input
+                  id="setting-specialty"
+                  name="specialty"
+                  type="text"
+                  maxlength="80"
+                  placeholder="Ex.: Terapia cognitivo-comportamental"
+                />
+              </div>
+
+              <p class="eyebrow settings__legend">Foto de perfil</p>
+
+              <div class="settings-photo">
+                <span
+                  class="settings__avatar settings-photo__preview"
+                  id="settings-photo-preview"
+                  aria-hidden="true"
+                >
+                  T
+                </span>
+                <div class="settings-photo__actions">
+                  <input
+                    class="file-input"
+                    id="setting-photo"
+                    name="photo"
+                    type="file"
+                    accept="image/*"
+                  />
+                  <button
+                    class="btn btn--ghost btn--sm settings-photo__btn"
+                    type="button"
+                    id="setting-photo-remove"
+                  >
+                    <span class="btn__label">Remover foto</span>
+                  </button>
+                </div>
+              </div>
+
+              <p class="eyebrow settings__legend">Aparência</p>
+
+              <div class="swatches" role="radiogroup" aria-label="Cor de destaque">
+                <label class="swatch">
+                  <input type="radio" name="accent" value="cinza" checked />
+                  <span class="swatch__dot" style="--sw: #778899"></span>
+                  <span class="swatch__name">Cinza</span>
+                </label>
+                <label class="swatch">
+                  <input type="radio" name="accent" value="terracota" />
+                  <span class="swatch__dot" style="--sw: #b4674d"></span>
+                  <span class="swatch__name">Terracota</span>
+                </label>
+                <label class="swatch">
+                  <input type="radio" name="accent" value="salvia" />
+                  <span class="swatch__dot" style="--sw: #7d8f74"></span>
+                  <span class="swatch__name">Sálvia</span>
+                </label>
+                <label class="swatch">
+                  <input type="radio" name="accent" value="dourado" />
+                  <span class="swatch__dot" style="--sw: #b08a4f"></span>
+                  <span class="swatch__name">Dourado</span>
+                </label>
+                <label class="swatch">
+                  <input type="radio" name="accent" value="rose" />
+                  <span class="swatch__dot" style="--sw: #b0728a"></span>
+                  <span class="swatch__name">Rosé</span>
+                </label>
+                <label class="swatch">
+                  <input type="radio" name="accent" value="noite" />
+                  <span class="swatch__dot" style="--sw: #4d5f82"></span>
+                  <span class="swatch__name">Noite</span>
+                </label>
+              </div>
+
+              <p class="eyebrow settings__legend">Notificações</p>
+
+              <div class="switch-row">
+                <span class="switch-row__text">
+                  <strong>Notificações por e-mail</strong>
+                  <span>Resumo diário das sessões e mensagens.</span>
+                </span>
+                <label class="switch">
+                  <input type="checkbox" name="email-notifications" checked />
+                  <span class="switch__track"></span>
+                </label>
+              </div>
+
+              <div class="switch-row">
+                <span class="switch-row__text">
+                  <strong>Novas mensagens</strong>
+                  <span id="chat-notifications-hint"
+                    >Avise quando a criadora do app responder no chat.</span
+                  >
+                </span>
+                <label class="switch">
+                  <input type="checkbox" name="chat-notifications" checked />
+                  <span class="switch__track"></span>
+                </label>
+              </div>
+
+              <button class="btn btn--primary" type="submit">
+                <span class="btn__label">Salvar alterações</span>
+              </button>
+
+              <div class="feedback" id="settings-feedback" aria-live="polite"></div>
+            </form>
+
+            <aside class="card settings__aside">
+              <span class="settings__avatar" id="settings-avatar" aria-hidden="true">
+                T
+              </span>
+              <strong class="settings__name" id="settings-aside-name">
+                Terapeuta
+              </strong>
+              <span class="settings__role" id="settings-aside-role">Terapeuta</span>
+              <span class="settings__role" id="settings-aside-specialty" hidden></span>
+              <div class="chips">
+                <span class="chip">Conta ativa</span>
+                <span class="chip" id="settings-aside-school">Escola</span>
+              </div>
+              <p class="settings__note">
+                Seus dados ficam apenas neste dispositivo nesta demonstração.
+              </p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="app__section" data-section="certificado" hidden>
+          <div class="card">
+            <p class="eyebrow">Certificado</p>
+            <h2 class="card__title">Meu certificado</h2>
+            <p class="card__text">
+              Baixe a imagem do seu selo de qualificado para usar em
+              assinaturas de e-mail e redes profissionais.
+            </p>
+
+            <div id="certificate-empty" hidden>
+              <p class="card__text">
+                Conclua as quatro etapas da Escola para receber o selo de
+                qualificado.
+              </p>
+              <button class="btn btn--ghost btn--auto" type="button" data-goto="escola">
+                Ir para a Escola
+              </button>
+            </div>
+
+            <div id="certificate-ready" hidden>
+              <div class="certificate" id="certificate-preview"></div>
+              <button class="btn btn--primary btn--auto" type="button" id="certificate-download">
+                Baixar certificado (PNG)
+              </button>
+              <div class="feedback" id="certificate-feedback" hidden></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="app__section" data-section="termos" hidden>
+          <div class="card legal">
+            <p class="eyebrow">Termos</p>
+            <h2 class="card__title">Políticas de uso e termos de licença</h2>
+            <p class="legal__date">Última atualização: outubro de 2026</p>
+
+            <h3>1. Sobre o app</h3>
+            <p>
+              O Cartas da Alma é uma ferramenta digital de apoio à prática
+              terapêutica, com baralhos temáticos de perguntas, área de
+              formação (Escola) e canal de comunicação com a criadora. Ao criar
+              uma conta e usar o app, você concorda com estes termos.
+            </p>
+
+            <h3>2. Licença de uso</h3>
+            <p>
+              Concede-se ao terapeuta uma licença pessoal, limitada, não
+              exclusiva e intransferível para usar o app na sua prática
+              profissional. É vedado: revender ou alugar o acesso; copiar,
+              fotografar, digitalizar ou reproduzir cartas, perguntas, textos
+              da Escola ou qualquer conteúdo do app; compartilhar login ou
+              código da Escola; criar obras derivadas a partir do material.
+            </p>
+
+            <h3>3. Uso terapêutico</h3>
+            <p>
+              O app é um apoio metodológico e não substitui formação, supervisão
+              ou responsabilidade clínica. A condução das sessões, a leitura
+              das cartas e os resultados apresentados aos pacientes são de
+              responsabilidade exclusiva do terapeuta. O sigilo profissional e
+              as normas do CFP (ou equivalente) continuam integralmente
+              aplicáveis ao atendimento.
+            </p>
+
+            <h3>4. Conta e acesso</h3>
+            <p>
+              Você é responsável pela veracidade dos dados cadastrais e pela
+              segurança das suas credenciais. O código de desbloqueio da Escola
+              é pessoal e intransferível. Atividades realizadas na sua conta
+              são consideradas suas.
+            </p>
+
+            <h3>5. Propriedade intelectual</h3>
+            <p>
+              Todo o conteúdo do app — marca, nove baralhos temáticos, imagens
+              das cartas, perguntas, textos da Escola, selo de qualificado,
+              layout e código — pertence à criadora do Cartas da Alma e é
+              protegido pela legislação de propriedade intelectual. Nenhum
+              direito é transferido além da licença de uso descrita aqui.
+            </p>
+
+            <h3>6. Privacidade e dados</h3>
+            <p>
+              Perfil, preferências e mensagens do chat são armazenados de forma
+              segura (Supabase) e usados apenas para o funcionamento do app.
+              Não comercializamos dados pessoais. Você pode pedir correção ou
+              exclusão dos seus dados pelo chat com a criadora, em conformidade
+              com a LGPD.
+            </p>
+
+            <h3>7. Condutas vedadas</h3>
+            <p>
+              É proibido usar o app para fins ilegais, para captar pacientes
+              com uso indevido da marca, para engenharia reversa ou para
+              qualquer exploração comercial do material sem autorização
+              expressa da criadora.
+            </p>
+
+            <h3>8. Alterações destes termos</h3>
+            <p>
+              Estes termos podem ser atualizados a qualquer momento. O uso
+              continuado do app após as alterações significa a aceitação da
+              nova versão. A versão vigente é sempre esta página.
+            </p>
+
+            <h3>9. Contato</h3>
+            <p>
+              Dúvidas sobre licença, uso do material ou seus dados podem ser
+              enviadas pelo chat com a criadora, dentro do app.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <div class="modal" id="carta-modal" hidden>
+        <div class="modal__backdrop" data-close></div>
+        <div
+          class="modal__panel modal__panel--carta"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="carta-modal-title"
+        >
+          <div class="carta-detail">
+            <img
+              class="carta-detail__img"
+              id="carta-modal-img"
+              src="carta1.jpeg"
+              alt="Carta Origem"
+            />
+            <div class="carta-detail__body">
+              <p class="eyebrow" id="carta-modal-eyebrow">Carta 01</p>
+              <h2 class="carta-detail__name" id="carta-modal-title" tabindex="-1">
+                Origem
+              </h2>
+
+              <div class="chips" id="carta-modal-chips">
+                <span class="chip">Espiritualidade</span>
+                <span class="chip">Cinza</span>
+              </div>
+
+              <p class="modal__text" id="carta-meaning">
+                Experiências e vivências relacionadas à espiritualidade. Aqui,
+                espiritualidade não significa necessariamente religião.
+                Refere-se à maneira como cada pessoa compreende sua própria
+                existência para além do que é material e visível.
+              </p>
+              <p class="modal__text" id="carta-meaning-2">
+                Pode envolver crenças, valores, sentidos, experiências
+                subjetivas e a percepção de quem a pessoa acredita ser para
+                além daquilo que é possível observar.
+              </p>
+
+              <h3 class="carta-detail__subtitle">
+                O que o terapeuta pode encontrar
+              </h3>
+              <p class="carta-detail__lead">
+                Esse baralho pode ajudar o terapeuta a compreender:
+              </p>
+              <ul class="carta-detail__list" id="carta-findings">
+                <li>Crenças profundas</li>
+                <li>Valores</li>
+                <li>Visão de mundo</li>
+                <li>Sentido de existência</li>
+                <li>Relação com o invisível</li>
+                <li>Experiências espirituais</li>
+                <li>Ideias sobre vida e morte</li>
+                <li>Aquilo que dá significado à existência</li>
+              </ul>
+
+              <h3 class="carta-detail__subtitle">
+                Exemplos de perguntas que existem nesse baralho
+              </h3>
+              <ul class="carta-detail__list carta-detail__list--questions" id="carta-questions">
+                <li>O que faz você lembrar que é mais do que é agora?</li>
+                <li>Que sensação te visita quando você se entrega ao silêncio?</li>
+                <li>
+                  Que força dentro de você te manteve de pé, mesmo quando tudo
+                  desabou?
+                </li>
+                <li>Como você cuida da sua paz interior?</li>
+              </ul>
+
+              <h3 class="carta-detail__subtitle">Movimento terapêutico</h3>
+              <p class="modal__text carta-detail__lead" id="carta-movement">
+                As cartas desse baralho trazem a oportunidade do terapeuta
+                entender os valores profundos pelos quais o paciente realiza
+                suas escolhas de vida.
+              </p>
+
+              <div class="modal__actions">
+                <button class="btn btn--primary btn--auto" type="button" data-close>
+                  Fechar
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Para quem a plataforma foi criada?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Foi criada para psicólogos, psicanalistas, terapeutas e profissionais de desenvolvimento pessoal que desejam incorporar novas formas de reflexão à experiência de seus clientes.</p>
+      </div>
+
+      <div class="modal" id="session-modal" hidden>
+        <div class="modal__backdrop" data-close></div>
+        <div
+          class="modal__panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="session-modal-title"
+        >
+          <p class="eyebrow">Nova sessão</p>
+          <h2 class="modal__title" id="session-modal-title" tabindex="-1">
+            Como será a sessão?
+          </h2>
+          <p class="modal__text">
+            No presencial, o baralho se abre e o paciente escolhe a carta. No
+            online, o app sorteia a carta da sessão.
+          </p>
+
+          <div class="options" role="radiogroup" aria-labelledby="session-modal-title">
+            <button
+              class="option"
+              type="button"
+              data-format="online"
+              role="radio"
+              aria-checked="false"
+            >
+              <span class="option__icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m22 8-6 4 6 4V8Z" />
+                  <rect width="14" height="12" x="2" y="6" rx="2" />
+                </svg>
+              </span>
+              <span class="option__body">
+                <strong>Online</strong>
+                <span>Vídeo-chamada · o link é enviado por e-mail.</span>
+              </span>
+              <span class="option__check" aria-hidden="true">✓</span>
+            </button>
+
+            <button
+              class="option"
+              type="button"
+              data-format="presencial"
+              role="radio"
+              aria-checked="false"
+            >
+              <span class="option__icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <span class="option__body">
+                <strong>Presencial</strong>
+                <span>Encontro no consultório com o paciente.</span>
+              </span>
+              <span class="option__check" aria-hidden="true">✓</span>
+            </button>
+          </div>
+
+          <div class="feedback" id="session-feedback" aria-live="polite"></div>
+
+          <div class="modal__actions">
+            <button class="btn btn--outline btn--auto" type="button" data-close>
+              Cancelar
+            </button>
+            <button
+              class="btn btn--primary btn--auto"
+              type="button"
+              id="session-create"
+              disabled
+            >
+              Criar sessão
+            </button>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Como o terapeuta envia uma carta?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+
+      <div
+        class="session-stage"
+        id="session-stage"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-label="Sessão com as cartas"
+      >
+        <div class="session-stage__head">
+          <p class="session-stage__mode" id="session-stage-mode"></p>
+          <button
+            class="cinematic__skip"
+            id="session-stage-close"
+            type="button"
+          >
+            Encerrar sessão
           </button>
-          <div class="faq-answer">
-            <p>O terapeuta acessa sua biblioteca, escolhe a carta desejada e a envia para o cliente de forma simples e intuitiva, com poucos cliques.</p>
-          </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>As cartas são criadas pelo terapeuta?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+
+        <div class="session-stage__spread" id="session-spread" hidden></div>
+
+        <div class="session-stage__deck" id="session-deck" hidden>
+          <div class="session-stage__stack" id="session-stack"></div>
+          <button class="btn btn--primary btn--auto" id="session-draw" type="button">
+            <span class="btn__label">Sortear carta</span>
           </button>
-          <div class="faq-answer">
-            <p>A plataforma já oferece uma biblioteca de cartas reflexivas prontas. O terapeuta escolhe a mais adequada para cada momento do acompanhamento.</p>
-          </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Meu cliente precisa baixar um aplicativo?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Não. O cliente acessa a carta diretamente pelo navegador, sem necessidade de download ou instalação.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>O Cartas da Alma substitui a terapia?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Não. O Cartas da Alma é uma ferramenta complementar. Ele não substitui o trabalho terapêutico, mas pode enriquecê-lo com momentos extras de reflexão.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Como funciona a assinatura?</span>
-            <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <div class="faq-answer">
-            <p>Em breve teremos planos acessíveis para diferentes necessidades. Cadastre-se para ser informado quando lançarmos!</p>
+
+        <div class="session-stage__result" id="session-result" hidden>
+          <img
+            class="session-stage__result-img"
+            id="session-result-img"
+            src="carta1.jpeg"
+            alt=""
+          />
+          <div class="session-stage__result-body">
+            <p class="eyebrow" id="session-result-eyebrow">Carta 01</p>
+            <h2 class="session-stage__result-name" id="session-result-name">
+              Origem
+            </h2>
+            <img
+            class="session-stage__question"
+            id="session-question"
+            alt=""
+          />
+            <div class="session-stage__actions">
+              <button class="btn btn--primary btn--auto" id="session-again" type="button">
+                <span class="btn__label">Sortear outra carta</span>
+              </button>
+              <button class="btn btn--outline btn--auto" id="session-end" type="button">
+                Encerrar
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="footer-logo"><img src="logo.PNG" alt="Cartas da Alma" class="logo-img logo-img-footer"></a>
-          <p class="footer-tagline">Conexão, reflexão e propósito em cada carta.</p>
-        </div>
-        <div class="footer-links">
-          <a href="#inicio">Início</a>
-          <a href="#como-funciona">Como funciona</a>
-          <a href="#beneficios">Benefícios</a>
-          <a href="#faq">FAQ</a>
-          <a href="#">Termos de uso</a>
-          <a href="#">Política de privacidade</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Cartas da Alma. Todos os direitos reservados.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
